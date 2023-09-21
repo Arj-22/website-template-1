@@ -2,16 +2,21 @@ import Link from "next/link"
 import Image from "next/image"
 // import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import { useRouter } from "next/navigation"
+import Button from "./ui/button"
+import HeaderActions from "./header-actions"
 // import { heroHeader } from "@/config/contents"
 
 
 interface HeroHeaderProps{
   title: string,
-  description: string
+  description: string,
+  href: string
 }
 
 
-export const HeroHeaderTwo: React.FC<HeroHeaderProps> = ({title, description}) => {
+export const HeroHeaderTwo: React.FC<HeroHeaderProps> = ({title, description, href}) => {
+
   return (
     <section className="container flex flex-col gap-4 pb-12 pt-4 text-center lg:items-center lg:gap-8 lg:py-20">
       <div className="flex flex-1 flex-col items-center gap-4 text-center lg:gap-8">
@@ -23,13 +28,15 @@ export const HeroHeaderTwo: React.FC<HeroHeaderProps> = ({title, description}) =
             {description}
           </h2>
         </div>
-        <Link
-          href="https://github.com/redpangilinan/next-shadcn-landing"
+        {/* <Link
+          href={href}
           target="_blank"
-          // className={`w-[10rem] ${cn(buttonVariants({ size: "lg" }))}`}
+          className="rounded-full bg-black text-white p-4"
         >
           Get started
-        </Link>
+        </Link> */}
+        <HeaderActions/>
+
       </div>
       {/* {heroHeader.image !== "" ? (
         <div className="flex flex-1 justify-center lg:justify-end">
@@ -43,6 +50,7 @@ export const HeroHeaderTwo: React.FC<HeroHeaderProps> = ({title, description}) =
       ) : (
         <></>
       )} */}
+
     </section>
   )
 }
