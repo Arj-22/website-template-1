@@ -12,7 +12,6 @@ const Footer: React.FC<FooterProps> = ({siteName}) => {
             <p className='text-center text-xs text-black'>
                 &copy; 2023 {siteName}, Inc. All rights reserved. Powered By Braezy.
             </p>
-
         </div>
     </footer>
   )
